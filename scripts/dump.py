@@ -17,9 +17,10 @@ def fetch_reviews_for_game(app_id, delay=2):
     url = f"https://store.steampowered.com/appreviews/{app_id}"
     params = {
         "json": 1,
-        "filter": "recent",
+        "filter": "updated",
         "review": "all",
         "language": "all",
+        "day_range": "365",
         "review_type": "all",
         "purchase_type": "all",
         "num_per_page": 100,
@@ -78,8 +79,7 @@ def insert_reviews_into_mongo(app_id):
 
 # Liste des jeux à traiter
 popular_app_ids = [
-    1672500
-    # Tu peux ajouter d'autres app_id ici
+    1250410
 ]
 
 # Exécution complète
